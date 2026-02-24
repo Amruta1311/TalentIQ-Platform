@@ -1,4 +1,4 @@
-# TalentIQ – AI Talent Intelligence Platform
+# TalentIQ – AI Talent Intelligence Platform - Deployed URL (https://talentiq-platform.streamlit.app/)
 
 Enterprise-grade ML system for resume-job matching.
 
