@@ -1,10 +1,17 @@
+# tabs/gpu_test.py
+import streamlit as st
 import time
-from sentence_transformers import SentenceTransformer
+from resume_match.main import model, device
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+def show():
+    st.header("GPU Test & Performance")
+    st.write(f"Using device: {device.upper()}")
 
-text = "Test resume data" * 100
+    # Benchmark inference time
+    dummy_texts = ["Test"] * 10
+    start = time.time()
+    dummy_embs = [model.encode(t) for t in dummy_texts]
+    end = time.time()
 
-start = time.time()
-model.encode(text)
-print("Latency:", time.time() - start)
+    st.metric("Inference Time for 10 encodings (seconds)", round(end - start, 3))
+    st.write("Check if GPU is being used for acceleration above.")
