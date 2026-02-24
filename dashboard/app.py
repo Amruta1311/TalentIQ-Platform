@@ -1,10 +1,9 @@
 # app.py
 import sys
 import os
-
-sys.path.append(os.path.dirname(__file__))  # adds dashboard folder to path
 import streamlit as st
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from resume_match import main
 from db import models
 from ranking import ranker
