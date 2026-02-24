@@ -1,0 +1,11 @@
+# Virtual environments
+venv/
+talentIQ_venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
